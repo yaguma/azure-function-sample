@@ -1,0 +1,29 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "route": "LogUpload/{year}/{month}/{day}/{hour}",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },    
+    {
+      "name": "outputblob",
+      "type": "blob",
+      "dataType": "string",
+      "path": "m365-log/{year}/{month}/{day}/{hour}.log",
+      "connection": "",
+      "direction": "out"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ]
+}
